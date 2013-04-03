@@ -1,0 +1,57 @@
+[jl99@spatz source]$ find . -exec grep -l "oracle" '{}' \;
+
+This is the list with jars and java files separated:
+
+./edu.harvard.i2b2.ontology/etc/scripts/ojdbc14.jar
+./edu.harvard.i2b2.crc.loader/etc/scripts/ojdbc14.jar
+./edu.harvard.i2b2.common/lib/quartz/quartz-all-1.6.5.jar
+./edu.harvard.i2b2.common/lib/jdbc/ojdbc14.jar
+./edu.harvard.i2b2.workplace/etc/scripts/ojdbc14.jar
+
+./edu.harvard.i2b2.pm/src/edu/harvard/i2b2/pm/upgrade/UpdateCells.java
+./edu.harvard.i2b2.crc/src/test/edu/harvard/i2b2/crc/dao/setfinder/SQLServerTest.java
+./edu.harvard.i2b2.crc/src/server/edu/harvard/i2b2/crc/util/QueryProcessorUtil.java
+./edu.harvard.i2b2.crc/src/server/edu/harvard/i2b2/crc/dao/pdo/PdoQueryProviderDao.java
+./edu.harvard.i2b2.crc/src/server/edu/harvard/i2b2/crc/dao/pdo/PdoQueryConceptDao.java
+./edu.harvard.i2b2.crc/src/server/edu/harvard/i2b2/crc/dao/pdo/PageTotalDao.java
+./edu.harvard.i2b2.crc/src/server/edu/harvard/i2b2/crc/dao/pdo/TablePdoQueryProviderDao.java
+./edu.harvard.i2b2.crc/src/server/edu/harvard/i2b2/crc/dao/pdo/TablePdoQueryConceptDao.java
+./edu.harvard.i2b2.crc/src/server/edu/harvard/i2b2/crc/dao/pdo/PdoQueryVisitDao.java
+./edu.harvard.i2b2.crc/src/server/edu/harvard/i2b2/crc/dao/pdo/PdoQueryEidDao.java
+./edu.harvard.i2b2.crc/src/server/edu/harvard/i2b2/crc/dao/pdo/PdoQueryPatientDao.java
+./edu.harvard.i2b2.crc/src/server/edu/harvard/i2b2/crc/dao/pdo/PdoQueryPidDao.java
+./edu.harvard.i2b2.crc/src/server/edu/harvard/i2b2/crc/dao/pdo/TablePdoQueryPatientDao.java
+./edu.harvard.i2b2.crc/src/server/edu/harvard/i2b2/crc/dao/pdo/TablePdoQueryVisitDao.java
+./edu.harvard.i2b2.crc/src/server/edu/harvard/i2b2/crc/dao/setfinder/QueryResultGenerator.java
+
+# Following file is missing from my install considerations:
+./edu.harvard.i2b2.ontology/etc/spring/OntologyApplicationContext.xml         ok
+./edu.harvard.i2b2.ontology/etc/jboss/ont-ds.xml                              ok
+# I think the following may be needed for an upgrade:
+./edu.harvard.i2b2.ontology/etc/scripts/db.properties                         ?
+
+./edu.harvard.i2b2.pm/etc/jboss/pm-ds.xml                                     ok
+
+# Following file mentions an oracle properties file which does not exist
+./edu.harvard.i2b2.fr/build.xml                                               ?
+
+./edu.harvard.i2b2.crc.loader/etc/spring/CRCLoaderApplicationContext.xml      ok
+# I think the following may be needed for an upgrade:
+./edu.harvard.i2b2.crc.loader/etc/scripts/db.properties                       ?
+# Following file mentions an oracle properties file which does not exist
+./edu.harvard.i2b2.crc.loader/build.xml                                       ?
+
+./edu.harvard.i2b2.crc/build.properties                                       ok
+# Why is there not an sqlserver version of the following file?
+./edu.harvard.i2b2.crc/db.oracle.properties                                   ?
+./edu.harvard.i2b2.crc/etc/spring/CRCApplicationContext.xml                   ok
+./edu.harvard.i2b2.crc/etc/jboss/crc-ds.xml                                   ok
+./edu.harvard.i2b2.crc/etc/jboss/crc-oracle-jdbc2-service.xml                 ok
+./edu.harvard.i2b2.crc/etc/jboss/crc-jms-ds.xml                               ok
+# Following file mentions an oracle properties file (see above)
+# Why is there not an sqlserver version?
+./edu.harvard.i2b2.crc/build.xml                                              ?
+
+./edu.harvard.i2b2.workplace/etc/jboss/work-ds.xml                            ok
+# I think the following may be needed for an upgrade:
+./edu.harvard.i2b2.workplace/etc/scripts/db.properties                        ?

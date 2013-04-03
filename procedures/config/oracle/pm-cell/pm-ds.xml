@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ===================================================================== -->
+<!--                                                                       -->
+<!--  JBoss Server Configuration                                           -->
+<!--                                                                       -->
+<!-- ===================================================================== -->
+
+<!-- Amended by Jeff Lusted -->
+
+<datasources>
+      
+  <!-- oracle PMBootStrapDS  -->
+  <local-tx-datasource>
+      <jndi-name>PMBootStrapDS</jndi-name>
+      <driver-class>${db.driver}</driver-class>      
+      <connection-url>${jdbc.url}</connection-url>
+      <user-name>${pm.username}</user-name>
+      <password>${pm.password}</password>
+  </local-tx-datasource>
+
+</datasources>

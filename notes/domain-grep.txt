@@ -1,0 +1,17 @@
+The following on the NewInstall data directory yielded the following files...
+find . -exec grep -i -l "domain" '{}' \;
+
+./Hivedata/scripts/crc_db_lookup_oracle_insert_data.sql
+./Hivedata/scripts/ont_db_lookup_oracle_insert_data.sql
+./Hivedata/scripts/work_db_lookup_oracle_insert_data.sql
+./Hivedata/scripts/create_oracle_i2b2hive_tables.sql
+
+./Hivedata/scripts/crc_db_lookup_sqlserver_insert_data.sql
+./Hivedata/scripts/ont_db_lookup_sqlserver_insert_data.sql
+./Hivedata/scripts/work_db_lookup_sqlserver_insert_data.sql
+./Hivedata/scripts/create_sqlserver_i2b2hive_tables.sql
+
+./Pmdata/scripts/create_oracle_i2b2pm_tables.sql
+./Pmdata/scripts/create_sqlserver_i2b2pm_tables.sql
+
+./Pmdata/scripts/pm_access_insert_data.sql

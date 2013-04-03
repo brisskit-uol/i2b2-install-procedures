@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="sql access" basedir=".">
+
+	<property environment="env" />
+
+	<!-- =================================================================== -->
+	<!-- 								INIT 								 -->
+	<!-- =================================================================== -->
+	<target name="init"  description="Prepare for accessing sql">
+		<path id="classpath">
+			<pathelement location="${install.home}/lib/ojdbc-14.jar" />
+			<pathelement location="${install.home}/lib/sqljdbc-2005.jar"/>
+		</path>
+	</target>
+
+	<!-- =================================================================== -->
+	<!--            accessing crc 1                                          -->
+	<!-- =================================================================== -->
+	<target name="crc-1" depends="init">
+		<echo message="accessing crc-1" />
+		<echo>db.driver=${db.driver}</echo>
+		<echo>jdbc.url=${jdbc.url}</echo>
+		<echo>demods.databasename=${demods.databasename}</echo>
+		<echo>demods.username=${demods.username}</echo>
+		<sql driver="${db.driver}" 
+				 url="${jdbc.url};port=${sqlserver.port};instanceName=${sqlserver.instanceName};DatabaseName=${demods.databasename}" 
+				 userid="${demods.username}" 
+				 password="${demods.password}" 
+				 classpathref="classpath" 
+				 print="true">
+		</sql>
+	</target>
+
+	<!-- =================================================================== -->
+	<!--            accessing ont 1                                          -->
+	<!-- =================================================================== -->
+	<target name="ont-1" depends="init">
+		<echo message="accessing ont-1" />
+		<sql driver="${db.driver}" 
+			 url="${jdbc.url};port=${sqlserver.port};instanceName=${sqlserver.instanceName};DatabaseName=${metadata.databasename}" 
+			 userid="${metadata.username}" 
+			 password="${metadata.password}" 
+			 classpathref="classpath" 
+			 print="true">
+		</sql>
+	</target>
+
+	<!-- =================================================================== -->
+	<!--            accessing work 1                                         -->
+	<!-- =================================================================== -->
+	<target name="work-1" depends="init">
+		<echo message="accessing work-1" />
+		<sql driver="${db.driver}" 
+			 url="${jdbc.url};port=${sqlserver.port};instanceName=${sqlserver.instanceName};DatabaseName=${workdata.databasename}" 
+			 userid="${workdata.username}" 
+			 password="${workdata.password}" 
+			 classpathref="classpath"  
+			 print="true">
+		</sql>
+	</target>
+
+	
+	<!-- =================================================================== -->
+	<!--            accessing hive                                           -->
+	<!-- =================================================================== -->
+	<target name="hive" depends="init">
+		<echo message="accessing hive" />
+		<echo>db.driver=${db.driver}</echo>
+		<echo>jdbc.url=${jdbc.url}</echo>
+		<echo>sqlserver.port=${sqlserver.port}</echo>
+		<echo>sqlserver.instanceName=${sqlserver.instanceName}</echo>
+		<echo>hive.databasename=${hive.databasename}</echo>
+		<echo>hive.username=${hive.username}</echo>
+		<echo>hive.password=${hive.password}</echo>
+		<sql driver="${db.driver}" 
+					 url="${jdbc.url};port=${sqlserver.port};instanceName=${sqlserver.instanceName};DatabaseName=${hive.databasename}" 
+					 userid="${hive.username}" 
+					 password="${hive.password}" 
+					 classpathref="classpath" 
+					 print="true">
+ select * from crc_db_lookup ;
+ select * from ont_db_lookup ;
+ select * from work_db_lookup ;
+-- select * from crc_analysis_job ;
+-- select * from dbo.CRC_ANALYSIS_JOB where queue_name = 'fred' and status_type_id = 'A' order by create_date ;
+		</sql>
+	</target>
+
+	<!-- =================================================================== -->
+	<!--            accessing pm                                             -->
+	<!-- =================================================================== -->
+	<target name="pm" depends="init">
+		<echo message="accessing pm" />
+		<sql driver="${db.driver}" 
+				 url="${jdbc.url};port=${sqlserver.port};instanceName=${sqlserver.instanceName};DatabaseName=${pm.databasename}" 
+				 userid="${pm.username}" 
+				 password="${pm.password}" 
+				 classpathref="classpath"  
+				 print="true">
+select * from PM_CELL_DATA ;
+select * from PM_HIVE_DATA ;
+select * from PM_PROJECT_DATA ;
+select * from PM_PROJECT_USER_ROLES;
+select * from PM_ROLE_REQUIREMENT;
+select * from PM_USER_DATA ;
+select * from PM_USER_SESSION ; 
+		</sql>
+	</target>
+
+</project>

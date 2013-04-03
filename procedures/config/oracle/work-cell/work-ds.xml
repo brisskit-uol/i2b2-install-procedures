@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ===================================================================== -->
+<!--                                                                       -->
+<!--  JBoss Server Configuration                                           -->
+<!--                                                                       -->
+<!-- ===================================================================== -->
+
+
+<!-- Amended by Jeff Lusted -->
+
+<datasources>
+
+	<!-- sample oracle WorkplaceBootStrapDS  -->
+	<local-tx-datasource>
+		<jndi-name>WorkplaceBootStrapDS</jndi-name>
+		<driver-class>${db.driver}</driver-class>
+		<connection-url>${jdbc.url}</connection-url>
+		<user-name>${hive.username}</user-name>
+		<password>${hive.password}</password>
+	</local-tx-datasource>
+
+	<!-- sample oracle project data source  -->
+	<local-tx-datasource>
+		<jndi-name>WorkplaceDemoDS</jndi-name>
+		<driver-class>${db.driver}</driver-class>
+		<connection-url>${jdbc.url}</connection-url>
+		<user-name>${workdata.username}</user-name>
+		<password>${workdata.password}</password>
+	</local-tx-datasource>
+	
+	<!-- BRISSKIT TEMPLATE POSITIONER -->
+
+</datasources>

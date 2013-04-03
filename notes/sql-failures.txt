@@ -1,0 +1,18 @@
+Within file edu.harvard.i2b2.data/Release_1-5/NewInstall/Metadata/scripts/sqlserver/birn_insert_data.sql
+========================================================================================================
+[sql] Failed to execute:  
+      
+INSERT INTO BIRN(C_HLEVEL, C_FULLNAME, C_NAME, C_SYNONYM_CD, C_VISUALATTRIBUTES, C_TOTALNUM, C_BASECODE, C_METADATAXML, C_FACTTABLECOLUMN, C_TABLENAME, C_COLUMNNAME, C_COLUMNDATATYPE, C_OPERATOR, C_DIMCODE, C_COMMENT, 
+
+C_TOOLTIP, UPDATE_DATE, DOWNLOAD_DATE, IMPORT_DATE, SOURCESYSTEM_CD, VALUETYPE_CD) 
+
+VALUES(3, '\BIRN\oasis\Images\Raw Images\', 'Raw Images', 'N', 'FA', NULL, NULL, NULL, 'concept_cd', 'concept_dimension', 'concept_path', 'T', 'LIKE', '\BIRN\oasis\Images\Raw Images\', NULL, 
+'oasis \ Images \ Raw Images', NULL, NULL, NULL, 'OASIS', NULL)
+      
+[sql] com.microsoft.sqlserver.jdbc.SQLServerException: Cannot insert the value NULL into column 'UPDATE_DATE', table 'i2b2metadata.dbo.BIRN'; column does not allow nulls. INSERT fails.
+
+
+Within edu.harvard.i2b2.data/Release_1-5/NewInstall/Metadata/scripts/expression_demo_insert_data.sql
+====================================================================================================
+[sql] Failed to execute:  INSERT INTO I2B2(C_HLEVEL, C_FULLNAME, C_NAME, C_SYNONYM_CD, C_VISUALATTRIBUTES, C_TOTALNUM, C_BASECODE, C_METADATAXML, C_FACTTABLECOLUMN, C_TABLENAME, C_COLUMNNAME, C_COLUMNDATATYPE, C_OPERATOR, C_DIMCODE, C_COMMENT, C_TOOLTIP, UPDATE_DATE, DOWNLOAD_DATE, IMPORT_DATE, SOURCESYSTEM_CD, VALUETYPE_CD) VALUES(1, '\i2b2\Expression Profiles Data\', 'Expression Profiles Data', 'N', 'FA', NULL, NULL, NULL, 'concept_cd', 'concept_dimension', 'concept_path', 'T', 'LIKE', '\i2b2\Expression Profiles Data\', NULL, 'Expression Profiles Data', NULL, NULL, NULL, NULL, NULL)
+[sql] com.microsoft.sqlserver.jdbc.SQLServerException: Cannot insert the value NULL into column 'UPDATE_DATE', table 'i2b2metadata.dbo.I2B2'; column does not allow nulls. INSERT fails.

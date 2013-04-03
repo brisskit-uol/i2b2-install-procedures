@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ===================================================================== -->
+<!--                                                                       -->
+<!--  JBoss Server Configuration                                           -->
+<!--                                                                       -->
+<!-- ===================================================================== -->
+
+
+<datasources>
+  
+  <local-tx-datasource>
+    <jndi-name>DefaultDS</jndi-name>
+    <connection-url>${jdbc.url};port=${sqlserver.port};instanceName=${sqlserver.instanceName};DatabaseName=${hive.databasename}</connection-url>
+    <driver-class>${db.driver}</driver-class>
+    <user-name>${hive.username}</user-name>
+    <password>${hive.password}</password>
+    <idle-timeout-minutes>1</idle-timeout-minutes>
+    <set-tx-query-timeout>true</set-tx-query-timeout>
+    <metadata>
+      <type-mapping>MS SQLSERVER2000</type-mapping>
+    </metadata>
+  </local-tx-datasource>
+  
+</datasources>

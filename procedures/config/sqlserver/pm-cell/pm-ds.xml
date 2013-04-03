@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ===================================================================== -->
+<!--                                                                       -->
+<!--  JBoss Server Configuration                                           -->
+<!--                                                                       -->
+<!-- ===================================================================== -->
+
+<!-- Amended by Jeff Lusted -->
+
+<datasources>
+      
+	<local-tx-datasource>
+		<jndi-name>PMBootStrapDS</jndi-name>
+		<connection-url>${jdbc.url};port=${sqlserver.port};instanceName=${sqlserver.instanceName};DatabaseName=${pm.databasename}
+		</connection-url>
+		<driver-class>${db.driver}</driver-class>
+		<user-name>${pm.username}</user-name>
+		<password>${pm.password}</password>
+		<idle-timeout-minutes>1</idle-timeout-minutes>
+		<set-tx-query-timeout>true</set-tx-query-timeout>
+		<metadata>
+			<type-mapping>MS SQLSERVER2000</type-mapping>
+		</metadata>
+	</local-tx-datasource>
+
+</datasources>

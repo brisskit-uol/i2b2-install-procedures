@@ -1,0 +1,14 @@
+Things missed or strange things I've noticed but done nothing about.
+
+(1) Bean setFinderResultGeneratorMap in config/sqlserver/crc-cell/CRCApplicationContext.xml 
+    seems to have references to DAO's which may need amending for BRICCS
+(2) config/sqlserver/crc-cell/OBFSC_SERVICE_ACCOUNT in file crc.properties has password of demouser still
+(3) crc.properties also has a parameter queryprocessor.ws.pm.bypass.project=Demo Why?
+(4) config/sqlserver/crc-loader/edu.harvard.i2b2.crc.loader.properties has also has:
+    a parameter of edu.harvard.i2b2.crc.loader.ws.pm.bypass.project=Demo   See point (3)
+    a parameter of edu.harvard.i2b2.crc.loader.ds.lookup.datasource=LoaderLookupDS I don't think I've seen this ds anywhere.
+(5) fr-cell/edu.harvard.i2b2.fr.properties also has property
+    edu.harvard.i2b2.fr.ws.pm.bypass.project=Demo  
+(6) ont-cell/ontology.properties  cand ditto for work-cell/workplace.properties also has a similar property 
+    ontology.ws.pm.bypass.project=Demo 
+    workplace.ws.pm.bypass.project=Demo

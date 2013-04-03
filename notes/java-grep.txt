@@ -1,0 +1,16 @@
+find . -exec grep -i -l "java" '{}' \;
+
+./Hivedata/scripts/ont_db_lookup_sqlserver_insert_data.sql
+./Hivedata/scripts/ont_db_lookup_oracle_insert_data.sql
+
+./Hivedata/scripts/crc_db_lookup_oracle_insert_data.sql
+./Hivedata/scripts/crc_db_lookup_sqlserver_insert_data.sql
+
+./Hivedata/scripts/work_db_lookup_oracle_insert_data.sql
+./Hivedata/scripts/work_db_lookup_sqlserver_insert_data.sql
+
+./Metadata/scripts/oracle/i2b2metadata_insert_data.sql
+./Metadata/scripts/sqlserver/i2b2metadata_insert_data.sql
+
+./Demodata/scripts/oracle/concept_dimension_insert_data.sql
+./Demodata/scripts/sqlserver/concept_dimension_insert_data.sql

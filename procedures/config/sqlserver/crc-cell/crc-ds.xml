@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ===================================================================== -->
+<!--                                                                       -->
+<!--  JBoss Server Configuration                                           -->
+<!--                                                                       -->
+<!-- ===================================================================== -->
+
+<datasources>
+
+	<local-tx-datasource>
+		<jndi-name>QueryToolDemoDS</jndi-name>
+		<connection-url>${jdbc.url};port=${sqlserver.port};instanceName=${sqlserver.instanceName};DatabaseName=${demods.databasename}</connection-url>
+		<driver-class>${db.driver}</driver-class>
+		<user-name>${demods.username}</user-name>
+		<password>${demods.password}</password>
+		<idle-timeout-minutes>1</idle-timeout-minutes>
+		<set-tx-query-timeout>true</set-tx-query-timeout>
+		<metadata>
+			<type-mapping>MS SQLSERVER2000</type-mapping>
+		</metadata>
+	</local-tx-datasource>
+	
+	
+	<!-- BRISSKIT TEMPLATE POSITIONER -->
+
+</datasources>
+

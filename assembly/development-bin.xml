@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly>
+  <id></id>
+  <formats>
+    <format>zip</format>
+  </formats>
+  <includeBaseDirectory>true</includeBaseDirectory>
+  <dependencySets>
+	<dependencySet>
+		<outputDirectory>lib</outputDirectory>
+		<useProjectArtifact>false</useProjectArtifact>
+		<useTransitiveDependencies>true</useTransitiveDependencies>
+		<excludes></excludes>		
+	</dependencySet>
+  </dependencySets>
+  <files>
+  	<file>
+    	<source>procedures/README</source>
+    	<destName>README</destName>	
+    </file>
+  </files>
+  <fileSets>
+  
+    <fileSet>
+ 		<directory>${basedir}/procedures/ant</directory> 
+ 		<outputDirectory>ant</outputDirectory>
+    </fileSet> 
+    <fileSet>
+    	<!-- includes  -->
+ 		<directory>${basedir}/procedures/bin/common</directory> 
+ 		<outputDirectory>bin/common</outputDirectory>
+ 		<fileMode>0774</fileMode>
+    </fileSet>
+    <fileSet>
+    	<!-- includes  -->
+ 		<directory>${basedir}/procedures/bin/compositions</directory> 
+ 		<outputDirectory>bin/compositions</outputDirectory>
+ 		<fileMode>0774</fileMode>
+    </fileSet>
+    <fileSet>
+    	<!-- includes  -->
+ 		<directory>${basedir}/procedures/bin/installs</directory> 
+ 		<outputDirectory>bin/installs</outputDirectory>
+ 		<fileMode>0774</fileMode>
+    </fileSet>
+    <fileSet>
+    	<!-- includes  -->
+ 		<directory>${basedir}/procedures/bin/global</directory> 
+ 		<outputDirectory>bin/global</outputDirectory>
+ 		<fileMode>0774</fileMode>
+    </fileSet>
+    <fileSet>
+    	<!-- includes  -->
+ 		<directory>${basedir}/procedures/bin/utility</directory> 
+ 		<outputDirectory>bin/utility</outputDirectory>
+ 		<fileMode>0774</fileMode>
+    </fileSet>
+    <fileSet>
+    	<!--  -->
+ 		<directory>${basedir}/procedures/config</directory> 
+ 		<outputDirectory>config</outputDirectory>
+    </fileSet>
+    <fileSet>
+    	<!--  -->
+ 		<directory>${basedir}/procedures/docs</directory> 
+ 		<outputDirectory>docs</outputDirectory>
+    </fileSet>
+    
+    <fileSet>
+    	<!--  -->
+ 		<directory>${basedir}/procedures/sql/</directory> 
+ 		<outputDirectory>sql</outputDirectory>
+    </fileSet>    
+    
+    <fileSet>
+    	<!-- Development -->
+ 		<directory>${basedir}/test/ant</directory> 
+ 		<outputDirectory>ant</outputDirectory>
+    </fileSet>
+    
+    <fileSet>
+    	<!-- Development -->
+ 		<directory>${basedir}/test/bin</directory> 
+ 		<outputDirectory>bin/utility</outputDirectory>
+ 		<fileMode>0774</fileMode>
+    </fileSet> 
+    
+    <fileSet>
+    	<!-- Development -->
+ 		<directory>${basedir}/test/config</directory> 
+ 		<outputDirectory>config</outputDirectory>
+    </fileSet>   
+    
+    <fileSet>
+    	<!-- Development -->
+ 		<directory>${basedir}/test/sql</directory> 
+ 		<outputDirectory>sql</outputDirectory>
+    </fileSet>
+    
+    <fileSet>
+    	<!--  -->
+ 		<directory>${basedir}/procedures/work</directory> 
+ 		<outputDirectory>work</outputDirectory>
+ 		<excludes>
+  			<exclude>**/*</exclude>
+		</excludes>		
+    </fileSet>
+  </fileSets>
+</assembly>

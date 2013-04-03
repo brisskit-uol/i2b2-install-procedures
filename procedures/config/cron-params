@@ -1,0 +1,1 @@
+2 0 21 * * /var/local/brisskit/i2b2/i2b2-admin-procedures/bin/apps/catissue/catissue_all.sh 1> transfer.report 2> transfer-error.report 

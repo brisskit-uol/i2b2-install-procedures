@@ -1,0 +1,26 @@
+Inspect the POM.
+================
+
+There is a production profile and a development profile.
+The build is production by default.
+Look at the enironment.type property setting, 
+which is used to produce two artifacts (development and production versions)... 
+
+To build a production artifact, the default install invocation is sufficient...
+mvn clean install
+
+To build a development artifact...
+mvn clean install -Denvironment.type=development
+
+The development version has facilities for dropping all sql artifacts. 
+Hence you must explicitly request a development build.
+
+NOTES:
+======
+(1) For development testing, the lib directory needs to be populated.
+    Do a maven install and then unzip the artifact's lib directory.
+(2) The stopping and starting of JBoss needs looking at.
+(3) The Oracle parts have been left in place, but ARE OUT OF DATE.
+    I've left them in situ because I understand that the Oracle
+    settings may well be close to Postgres (as and when an i2b2 version
+    supporting Postgres becomes available).

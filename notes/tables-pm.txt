@@ -1,0 +1,164 @@
+PM_CELL_DATA
+      [sql] CELL_ID,PROJECT_PATH,NAME,METHOD_CD,URL,CAN_OVERRIDE,CHANGE_DATE,ENTRY_DATE,CHANGEBY_CHAR,STATUS_CD
+      [sql] CRC,/,Data Repository,REST,http://lamp-lbi-08.rcs.le.ac.uk:8080/i2b2/rest/QueryToolService/,1,null,null,null,A
+      [sql] FRC,/,File Repository ,SOAP,http://lamp-lbi-08.rcs.le.ac.uk:8080/i2b2/services/FRService/,1,null,null,null,A
+      [sql] ONT,/,Ontology Cell,REST,http://lamp-lbi-08.rcs.le.ac.uk:8080/i2b2/rest/OntologyService/,1,null,null,null,A
+      [sql] WORK,/,Workplace Cell,REST,http://lamp-lbi-08.rcs.le.ac.uk:8080/i2b2/rest/WorkplaceService/,1,null,null,null,A
+
+Data from briccs-5:
+
+CRC	/	Data Repository	REST	http://briccs-5.rcs.le.ac.uk:9090/i2b2/rest/QueryToolService/	1	08-JUN-11	 - 	i2b2	A
+FRC	/	File Repository 	SOAP	http://briccs-5.rcs.le.ac.uk:9090/i2b2/services/FRService/	1	08-JUN-11	- 	i2b2	A
+ONT	/	Ontology Cell	REST	http://briccs-5.rcs.le.ac.uk:9090/i2b2/rest/OntologyService/	1	08-JUN-11	- 	i2b2	A
+WORK	/	Workplace Cell	REST	http://briccs-5.rcs.le.ac.uk:9090/i2b2/rest/WorkplaceService/	1	08-JUN-11	- 	i2b2
+
+
+PM_HIVE_DATA
+      [sql] DOMAIN_ID,HELPURL,DOMAIN_NAME,ENVIRONMENT_CD,ACTIVE,CHANGE_DATE,ENTRY_DATE,CHANGEBY_CHAR,STATUS_CD
+      [sql] LCBRU,http://www2.le.ac.uk/projects/bru/researchers/briccs,LCBRU,DEVELOPMENT,1,null,null,null,A
+      
+Data from briccs-5:
+i2b2	http://www.i2b2.org	i2b2demo	DEVELOPMENT	1	 - 	 - 	 - 	A
+
+PM_PROJECT_DATA
+      [sql] PROJECT_ID,PROJECT_NAME,PROJECT_WIKI,PROJECT_KEY,PROJECT_PATH,PROJECT_DESCRIPTION,CHANGE_DATE,ENTRY_DATE,CHANGEBY_CHAR,STATUS_CD
+      [sql] Demo,i2b2 Demo,http://www.i2b2.org,null,/Demo,null,null,null,null,A
+      [sql] Demo2,i2b2 Demo2,http://www.i2b2.org,null,/Demo2,null,null,null,null,A
+      
+Data from briccs-5:
+
+Demo	i2b2 Demo	http://www.i2b2.org	 - 	/Demo	 - 	 - 	 - 	 - 	A
+Demo2	i2b2 Demo2	http://www.i2b2.org	- 	/Demo2	- 	- 	- 	- 	A
+Briccs	i2b2 Briccs	http://www.i2b2.org	- 	/Briccs	- 	- 	- 	- 	A
+
+PM_PROJECT_USER_ROLES
+      [sql] PROJECT_ID,USER_ID,USER_ROLE_CD,CHANGE_DATE,ENTRY_DATE,CHANGEBY_CHAR,STATUS_CD
+      [sql] Demo,demo,DATA_AGG,null,null,null,A
+      [sql] Demo,demo,DATA_DEID,null,null,null,A
+      [sql] Demo,demo,DATA_LDS,null,null,null,A
+      [sql] Demo,demo,DATA_OBFSC,null,null,null,A
+      [sql] Demo,demo,EDITOR,null,null,null,A
+      [sql] Demo,demo,USER,null,null,null,A
+      [sql] Demo,i2b2,ADMIN,null,null,null,A
+      [sql] Demo,i2b2,DATA_OBFSC,null,null,null,A
+      [sql] Demo,i2b2,MANAGER,null,null,null,A
+      [sql] Demo,i2b2,USER,null,null,null,A
+      [sql] Demo,OBFSC_SERVICE_ACCOUNT,DATA_OBFSC,null,null,null,A
+      [sql] Demo,OBFSC_SERVICE_ACCOUNT,USER,null,null,null,A
+      [sql] Demo2,demo,DATA_AGG,null,null,null,A
+      [sql] Demo2,demo,DATA_DEID,null,null,null,A
+      [sql] Demo2,demo,DATA_LDS,null,null,null,A
+      [sql] Demo2,demo,DATA_OBFSC,null,null,null,A
+      [sql] Demo2,demo,EDITOR,null,null,null,A
+      [sql] Demo2,demo,USER,null,null,null,A
+      [sql] Demo2,i2b2,ADMIN,null,null,null,A
+      [sql] Demo2,i2b2,DATA_OBFSC,null,null,null,A
+      [sql] Demo2,i2b2,MANAGER,null,null,null,A
+      [sql] Demo2,i2b2,USER,null,null,null,A
+      [sql] Demo2,OBFSC_SERVICE_ACCOUNT,DATA_OBFSC,null,null,null,A
+      [sql] Demo2,OBFSC_SERVICE_ACCOUNT,USER,null,null,null,A
+      
+data from briccs-5:
+
+PROJECT_ID,USER_ID,USER_ROLE_CD,CHANGE_DATE,ENTRY_DATE,CHANGEBY_CHAR,STATUS_CD
+Briccs,jeff,USER,06-JUL-11,06-JUL-11,i2b2,A
+Briccs,jeff,DATA_PROT,06-JUL-11,06-JUL-11,i2b2,A
+Briccs,jeff,DATA_OBFSC,06-JUL-11,06-JUL-11,i2b2,A
+Briccs,jeff,DATA_AGG,06-JUL-11,06-JUL-11,i2b2,A
+Briccs,jeff,DATA_LDS,06-JUL-11,06-JUL-11,i2b2,A
+Briccs,jeff,DATA_DEID,06-JUL-11,06-JUL-11,i2b2,A
+Demo,OBFSC_SERVICE_ACCOUNT,USER,null,null,null,A
+Demo,OBFSC_SERVICE_ACCOUNT,DATA_OBFSC,null,null,null,A
+Demo,i2b2,ADMIN,null,null,null,A
+Demo,i2b2,MANAGER,null,null,null,A
+Demo,i2b2,USER,null,null,null,A
+Demo,i2b2,DATA_OBFSC,null,null,null,A
+Demo,demo,USER,null,null,null,A
+Demo,demo,DATA_DEID,null,null,null,A
+Demo,demo,DATA_OBFSC,null,null,null,A
+Demo,demo,DATA_AGG,null,null,null,A
+Demo,demo,DATA_LDS,null,null,null,A
+Demo,demo,EDITOR,null,null,null,A
+Demo2,OBFSC_SERVICE_ACCOUNT,USER,null,null,null,A
+Demo2,OBFSC_SERVICE_ACCOUNT,DATA_OBFSC,null,null,null,A
+Demo2,i2b2,ADMIN,null,null,null,A
+Demo2,i2b2,MANAGER,null,null,null,A
+Demo2,i2b2,USER,null,null,null,A
+Demo2,i2b2,DATA_OBFSC,null,null,null,A
+Demo2,demo,USER,null,null,null,A
+Demo2,demo,DATA_DEID,null,null,null,A
+Demo2,demo,DATA_OBFSC,null,null,null,A
+Demo2,demo,DATA_AGG,null,null,null,A
+Demo2,demo,DATA_LDS,null,null,null,A
+Demo2,demo,EDITOR,null,null,null,A
+Briccs,OBFSC_SERVICE_ACCOUNT,USER,null,null,null,A
+Briccs,OBFSC_SERVICE_ACCOUNT,DATA_OBFSC,null,null,null,A
+Briccs,i2b2,ADMIN,null,null,null,A
+Briccs,i2b2,MANAGER,null,null,null,A
+Briccs,i2b2,USER,null,null,null,A
+Briccs,i2b2,DATA_OBFSC,null,null,null,A
+Briccs,demo,USER,null,null,null,A
+Briccs,demo,DATA_DEID,null,null,null,A
+Briccs,demo,DATA_OBFSC,null,null,null,A
+Briccs,demo,DATA_AGG,null,null,null,A
+Briccs,demo,DATA_LDS,null,null,null,A
+Briccs,demo,EDITOR,null,null,null,A
+
+PM_ROLE_REQUIREMENT
+      [sql] TABLE_CD,COLUMN_CD,READ_HIVEMGMT_CD,WRITE_HIVEMGMT_CD,NAME_CHAR,CHANGE_DATE,ENTRY_DATE,CHANGEBY_CHAR,STATUS_CD
+      [sql] PM_CELL_DATA,@,@,MANAGER,null,null,null,null,A
+      [sql] PM_CELL_PARAMS,@,@,MANAGER,null,null,null,null,A
+      [sql] PM_GLOBAL_PARAMS,@,@,ADMIN,null,null,null,null,A
+      [sql] PM_HIVE_DATA,@,@,ADMIN,null,null,null,null,A
+      [sql] PM_HIVE_PARAMS,@,@,ADMIN,null,null,null,null,A
+      [sql] PM_PROJECT_DATA,@,@,MANAGER,null,null,null,null,A
+      [sql] PM_PROJECT_PARAMS,@,@,MANAGER,null,null,null,null,A
+      [sql] PM_PROJECT_USER_PARAMS,@,@,MANAGER,null,null,null,null,A
+      [sql] PM_PROJECT_USER_ROLES,@,@,MANAGER,null,null,null,null,A
+      [sql] PM_USER_DATA,@,@,ADMIN,null,null,null,null,A
+      [sql] PM_USER_PARAMS,@,@,ADMIN,null,null,null,null,A
+
+data from briccs-5:
+
+TABLE_CD,COLUMN_CD,READ_HIVEMGMT_CD,WRITE_HIVEMGMT_CD,NAME_CHAR,CHANGE_DATE,ENTRY_DATE,CHANGEBY_CHAR,STATUS_CD
+PM_HIVE_DATA,@,@,ADMIN,null,null,null,null,A
+PM_HIVE_PARAMS,@,@,ADMIN,null,null,null,null,A
+PM_PROJECT_DATA,@,@,MANAGER,null,null,null,null,A
+PM_PROJECT_USER_ROLES,@,@,MANAGER,null,null,null,null,A
+PM_USER_DATA,@,@,ADMIN,null,null,null,null,A
+PM_PROJECT_PARAMS,@,@,MANAGER,null,null,null,null,A
+PM_PROJECT_USER_PARAMS,@,@,MANAGER,null,null,null,null,A
+PM_USER_PARAMS,@,@,ADMIN,null,null,null,null,A
+PM_CELL_DATA,@,@,MANAGER,null,null,null,null,A
+PM_CELL_PARAMS,@,@,MANAGER,null,null,null,null,A
+PM_GLOBAL_PARAMS,@,@,ADMIN,null,null,null,null,A
+
+PM_USER_DATA
+      [sql] USER_ID,FULL_NAME,PASSWORD,EMAIL,PROJECT_PATH,CHANGE_DATE,ENTRY_DATE,CHANGEBY_CHAR,STATUS_CD
+      [sql] demo,i2b2 User,9117d59a69dc49807671a51f10ab7f,null,null,null,null,null,A
+      [sql] i2b2,i2b2 Admin,9117d59a69dc49807671a51f10ab7f,null,null,null,null,null,A
+      [sql] OBFSC_SERVICE_ACCOUNT,OBFSC_SERVICE_ACCOUNT,9117d59a69dc49807671a51f10ab7f,null,null,null,null,null,A
+
+data from briccs-5:
+
+USER_ID,FULL_NAME,PASSWORD,EMAIL,CHANGE_DATE,ENTRY_DATE,CHANGEBY_CHAR,STATUS_CD
+jeff,Jeff Lusted,166ee015c0e0934a8781e0c86a197c6e,jl99@leicester.ac.uk,06-JUL-11,06-JUL-11,i2b2,A
+i2b2,i2b2 Admin,9117d59a69dc49807671a51f10ab7f,null,null,null,null,A
+demo,i2b2 User,9117d59a69dc49807671a51f10ab7f,null,null,null,null,A
+OBFSC_SERVICE_ACCOUNT,OBFSC_SERVICE_ACCOUNT,9117d59a69dc49807671a51f10ab7f,null,null,null,null,A
+
+
+I haven't bothered with comparing to briccs-5:
+PM_USER_SESSION
+      [sql] USER_ID,SESSION_ID,EXPIRED_DATE,CHANGE_DATE,ENTRY_DATE,CHANGEBY_CHAR,STATUS_CD
+      [sql] demo,3aBwY1ZwKqFwQlv2wh1E,2011-08-23 17:11:33.963,null,2011-08-23 16:41:33.963,demo,null
+      [sql] demo,3TVh15tDKgmrqXB8i7Ve,2011-08-23 17:46:40.067,null,2011-08-23 17:16:40.067,demo,null
+      [sql] demo,9gbXYkUOOpcsICdSYFtu,2011-08-23 14:52:39.707,null,2011-08-23 14:22:39.707,demo,null
+      [sql] demo,EiNXN7OjFB9x6MyVBiN6,2011-08-23 17:47:08.457,null,2011-08-23 17:17:08.457,demo,null
+      [sql] demo,JM1RgQ2alwwRgXItqCqN,2011-08-23 17:10:04.93,null,2011-08-23 16:40:04.93,demo,null
+      [sql] demo,LRNK3Qjffl7EGyNlXQNu,2011-08-23 17:47:53.003,null,2011-08-23 17:17:53.003,demo,null
+      [sql] demo,v5U8LqBjfEKOTTkY7soX,2011-08-23 14:44:14.77,null,2011-08-23 14:14:14.77,demo,null
+      [sql] demo,xObFQdO2O7ASDmHQqSOY,2011-08-23 18:44:29.607,null,2011-08-23 18:14:29.607,demo,null
+      [sql] demo,XzD66iIVoUGINXHuk0gi,2011-08-23 19:43:52.457,null,2011-08-23 19:13:52.457,demo,null
+      [sql] demo,Ystxcq1P4xr63fD8UaOu,2011-08-23 17:09:28.13,null,2011-08-23 16:39:28.13,demo,null
+

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ===================================================================== -->
+<!--                                                                       -->
+<!--  JBoss Server Configuration                                           -->
+<!--                                                                       -->
+<!-- ===================================================================== -->
+
+<datasources>
+
+	<!-- sample oracle data source config  -->
+	<local-tx-datasource>
+		<jndi-name>QueryToolDemoDS</jndi-name>
+		<connection-url>${jdbc.url}</connection-url>
+		<driver-class>${db.driver}</driver-class>
+		<user-name>${demods.username}</user-name>
+		<password>${demods.password}</password>
+		<idle-timeout-minutes>1</idle-timeout-minutes>
+		<exception-sorter-class-name>org.jboss.resource.adapter.jdbc.vendor.OracleExceptionSorter
+		</exception-sorter-class-name>
+		<metadata>
+			<type-mapping>Oracle9i</type-mapping>
+		</metadata>
+	</local-tx-datasource>  
+	
+	<!-- BRISSKIT TEMPLATE POSITIONER -->
+
+</datasources>
+

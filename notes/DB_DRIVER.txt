@@ -1,0 +1,9 @@
+[jl99@spatz i2b2-install-jl-trac91]$ find . -exec grep -l "DB_DRIVER" '{}' \;
+./procedures/ant/oracle/sqlaccess.xml #
+./procedures/ant/sqlserver/sqlaccess.xml #
+
+./procedures/config/config.properties
+
+./test/ant/oracle/DEVONLY-DROP-artifacts.xml #
+./test/ant/sqlserver/DEVONLY-DROP-artifacts.xml #
+

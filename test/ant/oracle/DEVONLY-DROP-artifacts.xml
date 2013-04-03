@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="DROP SQL artifacts" basedir=".">
+
+	<property environment="env" />
+
+	<!-- =================================================================== -->
+	<!-- 								INIT 								 -->
+	<!-- =================================================================== -->
+	<target name="init"  description="Prepare for dropping artifacts">
+		<path id="classpath">
+			<pathelement location="${install.home}/lib/ojdbc-14.jar" />
+			<pathelement location="${install.home}/lib/sqljdbc-2005.jar"/>
+		</path>
+	</target>
+
+	<!-- *************************************************************************** -->
+	<!--      Section drops all database artifacts for the first demo project...     -->
+	<!-- *************************************************************************** -->
+
+	<!-- =================================================================== -->
+	<!--            Dropping crc data artifacts                              -->
+	<!-- =================================================================== -->
+	<target name="drop_demodata" depends="init">
+		<echo message="Dropping demodata artifacts" />
+		<sql driver="${db.driver}" 
+				 url="${jdbc.url}" 
+				 userid="${demods.username}" 
+				 password="${demods.password}" 
+				 classpathref="classpath" 
+				 onerror="continue" 
+				 print="true">
+			<transaction src="${install.home}/sql/${db.type}/DEVONLY-DROP-procedures.sql" />
+			<transaction src="${install.home}/sql/${db.type}/DEVONLY-DROP-demodata.sql" />
+		</sql>
+	</target>
+
+	<!-- =================================================================== -->
+	<!--            Dropping metadata artifacts                              -->
+	<!-- =================================================================== -->
+	<target name="drop_metadata" depends="init">
+		<echo message="Dropping metadata artifacts" />
+		<sql driver="${db.driver}" 
+			 url="${jdbc.url}" 
+			 userid="${metadata.username}" 
+			 password="${metadata.password}" 
+			 classpathref="classpath" 
+			 onerror="continue" 
+			 print="true">
+			<transaction src="${install.home}/sql/${db.type}/DEVONLY-DROP-metadata.sql" />
+		</sql>
+	</target>
+
+	<!-- =================================================================== -->
+	<!--            Dropping workdata artifacts                              -->
+	<!-- =================================================================== -->
+	<target name="drop_workdata" depends="init">
+		<echo message="Dropping workdata artifacts" />
+		<sql driver="${db.driver}" 
+			 url="${jdbc.url}" 
+			 userid="${workdata.username}" 
+			 password="${workdata.password}" 
+			 classpathref="classpath" 
+			 onerror="continue" 
+			 print="true">
+			<transaction src="${install.home}/sql/${db.type}/DEVONLY-DROP-workdata.sql" />
+		</sql>
+	</target>
+	
+	<!-- *************************************************************************** -->
+	<!--       Section drops all database artifacts for the hive and pm cells...     -->
+	<!-- *************************************************************************** -->
+
+	<!-- =================================================================== -->
+	<!--            Dropping hive artifacts                                  -->
+	<!-- =================================================================== -->
+	<target name="drop_i2b2hive" depends="init">
+		<echo message="Dropping hive artifacts" />
+		<sql driver="${db.driver}" 
+					 url="${jdbc.url}" 
+					 userid="${hive.username}" 
+					 password="${hive.password}" 
+					 classpathref="classpath" 
+					 onerror="continue" 
+					 print="true">
+			<transaction src="${install.home}/sql/${db.type}/DEVONLY-DROP-hive.sql" />
+		</sql>
+	</target>
+
+	<!-- =================================================================== -->
+	<!--            Dropping pm artifacts                                    -->
+	<!-- =================================================================== -->
+	<target name="drop_i2b2pm" depends="init">
+		<echo message="Dropping pm artifacts" />
+		<sql driver="${db.driver}" 
+				 url="${jdbc.url}" 
+				 userid="${pm.username}" 
+				 password="${pm.password}" 
+				 classpathref="classpath" 
+				 onerror="continue" 
+				 print="true">
+			<transaction src="${install.home}/sql/${db.type}/DEVONLY-DROP-pm.sql" />
+		</sql>
+	</target>
+
+</project>
