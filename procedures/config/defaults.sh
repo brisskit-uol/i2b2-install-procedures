@@ -23,7 +23,7 @@ export SOURCE_DIRECTORY=source
 export DATA_DIRECTORY=data
 
 # We need a user and password for wget to maven repo
-export MVN_READONLY_PASSWORD=readonly
+export MVN_READONLY_USER=readonly
 export MVN_READONLY_PASSWORD=readonly.....
 
 # Acquisition paths:

@@ -75,7 +75,7 @@ echo "This may take some time."
 
 print_message "" $LOG_FILE
 print_message "Acquiring Java JDK..." $LOG_FILE
-wget --user=$MVN_READONLY_PASSWORD \
+wget --user=$MVN_READONLY_USER \
      --password=$MVN_READONLY_PASSWORD \
      -O $ACQUISITIONS/$( basename $JDK_DOWNLOAD_PATH ) $JDK_DOWNLOAD_PATH
 exit_if_bad $? "Failed to acquire Java JDK." $LOG_FILE
@@ -83,7 +83,7 @@ print_message "Success! Acquired Java JDK." $LOG_FILE
 
 print_message "" $LOG_FILE
 print_message "Acquiring Ant..." $LOG_FILE
-wget --user=$MVN_READONLY_PASSWORD \
+wget --user=$MVN_READONLY_USER \
      --password=$MVN_READONLY_PASSWORD \
      -O $ACQUISITIONS/$( basename $ANT_DOWNLOAD_PATH ) $ANT_DOWNLOAD_PATH
 exit_if_bad $? "Failed to acquire Ant." $LOG_FILE
@@ -91,7 +91,7 @@ print_message "Success! Acquired Ant." $LOG_FILE
 
 print_message "" $LOG_FILE
 print_message "Acquiring JBoss..." $LOG_FILE
-wget --user=$MVN_READONLY_PASSWORD \
+wget --user=$MVN_READONLY_USER \
      --password=$MVN_READONLY_PASSWORD \
      -O $ACQUISITIONS/$( basename $JBOSS_DOWNLOAD_PATH ) $JBOSS_DOWNLOAD_PATH
 exit_if_bad $? "Failed to acquire JBoss." $LOG_FILE
@@ -99,7 +99,7 @@ print_message "Success! Acquired JBoss." $LOG_FILE
 
 print_message "" $LOG_FILE
 print_message "Acquiring i2b2 integration web service..." $LOG_FILE
-wget --user=$MVN_READONLY_PASSWORD \
+wget --user=$MVN_READONLY_USER \
      --password=$MVN_READONLY_PASSWORD \
      -O $ACQUISITIONS/$( basename $I2B2_INTEGRATION_WS_DOWNLOAD_PATH ) $I2B2_INTEGRATION_WS_DOWNLOAD_PATH
 exit_if_bad $? "Failed to acquire i2b2 integration web service." $LOG_FILE
@@ -107,7 +107,7 @@ print_message "Success! Acquired i2b2 integration web service." $LOG_FILE
 
 print_message "" $LOG_FILE
 print_message "Acquiring i2b2 admin procedures..." $LOG_FILE
-wget --user=$MVN_READONLY_PASSWORD \
+wget --user=$MVN_READONLY_USER \
      --password=$MVN_READONLY_PASSWORD \
      -O $ACQUISITIONS/$( basename $I2B2_ADMIN_PROCEDURES_DOWNLOAD_PATH ) $I2B2_ADMIN_PROCEDURES_DOWNLOAD_PATH
 exit_if_bad $? "Failed to acquire i2b2 admin procedures." $LOG_FILE
@@ -120,7 +120,7 @@ if [ -e $ACQUISITIONS/$AXIS_WAR ]
 then
 	print_message "Bypassing, file already exists." $LOG_FILE
 else
-	wget --user=$MVN_READONLY_PASSWORD \
+	wget --user=$MVN_READONLY_USER \
          --password=$MVN_READONLY_PASSWORD \
          -O $ACQUISITIONS/$AXIS_WAR $AXIS_WAR_DOWNLOAD_PATH
 	exit_if_bad $? "Failed to acquire axis war file." $LOG_FILE
@@ -134,7 +134,7 @@ if [ -e $ACQUISITIONS/$SOURCE_ZIP ]
 then
 	print_message "Bypassing, file already exists." $LOG_FILE
 else
-	wget --user=$MVN_READONLY_PASSWORD \
+	wget --user=$MVN_READONLY_USER \
          --password=$MVN_READONLY_PASSWORD \
          -O $ACQUISITIONS/$SOURCE_ZIP $I2B2_SOURCE_DOWNLOAD_PATH
 	exit_if_bad $? "Failed to acquire i2b2 core source zip file." $LOG_FILE
@@ -148,7 +148,7 @@ if [ -e $ACQUISITIONS/$DATA_ZIP ]
 then
 	print_message "Bypassing, file already exists." $LOG_FILE
 else
-	wget --user=$MVN_READONLY_PASSWORD \
+	wget --user=$MVN_READONLY_USER \
          --password=$MVN_READONLY_PASSWORD \
          -O $ACQUISITIONS/$DATA_ZIP $I2B2_DATA_DOWNLOAD_PATH
 	exit_if_bad $? "Failed to acquire i2b2 data zip file." $LOG_FILE
@@ -166,8 +166,8 @@ unzip $ACQUISITIONS/$DATA_ZIP -d $I2B2_INSTALL_WORKSPACE/$JOB_NAME/$DATA_DIRECTO
 exit_if_bad $? "Failed to unzip i2b2 data zip file: $ACQUISITIONS/$DATA_ZIP" $LOG_FILE
 
 print_message "" $LOG_FILE
-print_message "Fourth: acquiring i2b2 integration web service..." $LOG_FILE
-wget --user=$MVN_READONLY_PASSWORD \
+print_message "Acquiring i2b2 integration web service..." $LOG_FILE
+wget --user=$MVN_READONLY_USER \
      --password=$MVN_READONLY_PASSWORD \
      -O $ACQUISITIONS/$( basename $I2B2_INTEGRATION_WS_DOWNLOAD_PATH ) $I2B2_INTEGRATION_WS_DOWNLOAD_PATH
 exit_if_bad $? "Failed to acquire i2b2 integration web service." $LOG_FILE
