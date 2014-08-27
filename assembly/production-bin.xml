@@ -67,8 +67,8 @@
     
     <fileSet>
     	<!--  -->
- 		<directory>${basedir}/procedures/sql/</directory> 
- 		<outputDirectory>sql</outputDirectory>
+ 		<directory>${basedir}/procedures/merge-files/</directory> 
+ 		<outputDirectory>merge-files</outputDirectory>
     </fileSet>
     <fileSet>
     	<!--  -->

@@ -1,0 +1,5 @@
+jeff@darwin:/var/local/i2b2-1.7.01/data$ find . -exec grep -l "INSERT INTO PM_USER_DATA" '{}' \;
+./edu.harvard.i2b2.data/Release_1-7/NewInstall/Pmdata/scripts/create_sqlserver_i2b2pm_tables.sql
+./edu.harvard.i2b2.data/Release_1-7/NewInstall/Pmdata/scripts/pm_access_insert_data.sql
+./edu.harvard.i2b2.data/Release_1-7/NewInstall/Pmdata/scripts/create_postgresql_i2b2pm_tables.sql
+./edu.harvard.i2b2.data/Release_1-7/NewInstall/Pmdata/scripts/create_oracle_i2b2pm_tables.sql

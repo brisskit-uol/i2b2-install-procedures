@@ -1,4 +1,5 @@
 Things missed or strange things I've noticed but done nothing about.
+This has not been reviewed since i2b2 1.5.5
 
 (1) Bean setFinderResultGeneratorMap in config/sqlserver/crc-cell/CRCApplicationContext.xml 
     seems to have references to DAO's which may need amending for BRICCS
@@ -9,6 +10,6 @@ Things missed or strange things I've noticed but done nothing about.
     a parameter of edu.harvard.i2b2.crc.loader.ds.lookup.datasource=LoaderLookupDS I don't think I've seen this ds anywhere.
 (5) fr-cell/edu.harvard.i2b2.fr.properties also has property
     edu.harvard.i2b2.fr.ws.pm.bypass.project=Demo  
-(6) ont-cell/ontology.properties  cand ditto for work-cell/workplace.properties also has a similar property 
+(6) ont-cell/ontology.properties and ditto for work-cell/workplace.properties also has a similar property 
     ontology.ws.pm.bypass.project=Demo 
     workplace.ws.pm.bypass.project=Demo

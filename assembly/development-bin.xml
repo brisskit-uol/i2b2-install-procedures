@@ -68,33 +68,27 @@
     
     <fileSet>
     	<!--  -->
- 		<directory>${basedir}/procedures/sql/</directory> 
- 		<outputDirectory>sql</outputDirectory>
+ 		<directory>${basedir}/procedures/merge-files/</directory> 
+ 		<outputDirectory>merge-files</outputDirectory>
     </fileSet>    
     
     <fileSet>
     	<!-- Development -->
  		<directory>${basedir}/test/ant</directory> 
- 		<outputDirectory>ant</outputDirectory>
+ 		<outputDirectory>development-only/ant</outputDirectory>
     </fileSet>
     
     <fileSet>
     	<!-- Development -->
  		<directory>${basedir}/test/bin</directory> 
- 		<outputDirectory>bin/utility</outputDirectory>
+ 		<outputDirectory>development-only/bin</outputDirectory>
  		<fileMode>0774</fileMode>
     </fileSet> 
     
     <fileSet>
     	<!-- Development -->
- 		<directory>${basedir}/test/config</directory> 
- 		<outputDirectory>config</outputDirectory>
-    </fileSet>   
-    
-    <fileSet>
-    	<!-- Development -->
  		<directory>${basedir}/test/sql</directory> 
- 		<outputDirectory>sql</outputDirectory>
+ 		<outputDirectory>development-only/sql</outputDirectory>
     </fileSet>
     
     <fileSet>

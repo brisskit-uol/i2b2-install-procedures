@@ -12,21 +12,24 @@ QUICK START.
    Also ensure the paths to the i2b2 install procedures and the i2b2 admin procedures are correct.
    (The admin procedures themselves are installed by the current install procedures).
 4  Review configuration settings within the config directory.
-   Basically these files:
-    {procedures}/config/jboss/run.conf
-    {procedures}/config/jboss/server.xml
-    {procedures}/config/defaults.sh
-    {procedures}/config/config.properties
-    {procedures}/config/webservice.properties
+   NB: (a) Install-time-only config settings are contained in the defaults.sh file.
+       Execution-time settings are held in the other files and directories 
+       below the config directory.
+       (b) You need to create an 'integration' OS user account beforehand.
 5. The order of completion is by number within the procedures/bin/installs directory
    or use the {procedures}/bin/compositions/install-all.sh to install everything in one go.
 6. NB. You (or your script) needs to source the set.sh file before executing any of the install
-   scripts contained here. Be aware, IF YOU EXECUTE ANY COMMANDS AS sudo, 
-   remember that environment variables will be lost if you (or your script) does
+   scripts contained here. 
+   
+   Be aware, some commands (eg: to set up the webclient in directory /var/www ) 
+   are prefixed with 'sudo', so you will be prompted for a password.
+   
+   Alternatively, you can execute the overall install using sudo.  
+   But remember that environment variables will be lost if you (or your script) does
    not use the -E option on sudo. For example:
    
    source ./set.sh
    sudo -E ./procedures/bin/compositions/install-all.sh job-20130208
    
-   Of course, it is not good practice to run things as root.
+   (Of course, it is not good practice to run things as root.)
 

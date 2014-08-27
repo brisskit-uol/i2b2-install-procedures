@@ -1,0 +1,12 @@
+Started with /bin/common
+	funtions.sh identical
+	setenv.sh identical
+
+
+/procedures/global/set.sh
+	may need further change for package names.
+	
+/procedures/bin/installs/1a-prerequisites.sh
+	no change
+	
+/procedures/bin/installs/1b-acquisitions.sh

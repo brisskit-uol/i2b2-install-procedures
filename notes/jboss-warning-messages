@@ -1,0 +1,6 @@
+I'm getting the following on jars within the i2b2.war when deploying:
+
+"does not point to a valid jar for a Class-Path reference"
+
+I'm only getting these on ones I've copied across as missing (causing ClassNotFoundExceptions).
+The copy is located within the file 7-pm-install.sh as an adjunct to deploying the common package.

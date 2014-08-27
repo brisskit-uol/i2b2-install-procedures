@@ -2,26 +2,27 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.brisskit.install</groupId>
-	<artifactId>i2b2-1.5.5-install-procedures</artifactId>
+	<artifactId>i2b2-1.7-install-procedures</artifactId>
 	<packaging>pom</packaging>
 	<name>i2b2 Install Procedures. For BRISSkit</name>
-	<version>1.0-RC1-${environment.type}</version>
+	<version>1.0-${environment.type}-SNAPSHOT</version>
 	<description>This project covers procedures for installing i2b2 cells, together with data for a domain and one demo project. Also an integration web service.</description>
 
 	<!--+
 	    | The distributionManagement element is required for deploying an artifact to a remote repository.
 	    | The repo will align with the version number; ie: a SNAPSHOT version will deploy to our snapshots
 	    | repo whereas one without a SNAPSHOT within the version number will deploy to the releases repo.
+	    | NB: The word SNAPSHOT has to be at the end of the version number.
 	    +-->
 	<distributionManagement>
 		<repository>
 			<id>nexus</id>
-			<name>Brisskit Maven Snapshots</name>
+			<name>Brisskit Maven Releases</name>
 			<url>scpexe://maven.brisskit.org/var/local/brisskit/sonatype-work/nexus/storage/releases</url>
 		</repository>
 		<snapshotRepository>
 			<id>nexus</id>
-			<name>Brisskit Maven Releases</name>
+			<name>Brisskit Maven Snapshots</name>
 			<url>scpexe://maven.brisskit.org/var/local/brisskit/sonatype-work/nexus/storage/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
@@ -71,6 +72,11 @@
 			<groupId>ms.jdbc</groupId>
 			<artifactId>sqljdbc</artifactId>
 			<version>2005</version>
+		</dependency>
+		<dependency>
+			<groupId>postgresql.jdbc</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>9.2-1002.jdbc4</version>
 		</dependency>
 		<dependency>
 		  <groupId>org.brisskit.app.utils</groupId>

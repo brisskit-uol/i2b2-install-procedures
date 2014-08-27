@@ -1,0 +1,19 @@
+JBoss.
+======
+version 
+
+I have not altered this version of JBoss, which is jboss-as-7.1.1.Final
+That is, I have not done the following (yet)...
+
+Removal of the jmx-console web application drectory 'jmx-console.war'
+Removal of the web management application directory 'management'
+Edit of file ./jboss-web.deployer/ROOT.war/WEB-INF/web.xml to comment out the Tomcat Status Servlet
+Edit of file ./jboss-web.deployer/ROOT.war/index.html to remove links from web page
+
+Within maven, this version is:
+<dependency>
+  <groupId>jboss.jboss-server</groupId>
+  <artifactId>jboss-as</artifactId>
+  <version>7.1.1.Final</version>
+  <type>zip</type>
+</dependency>

@@ -40,17 +40,37 @@ fi
 # Retrieve job-name into its variable...
 JOB_NAME=$1
 
-$I2B2_INSTALL_PROCS_HOME/bin/installs/1a-prerequisites.sh $JOB_NAME
-$I2B2_INSTALL_PROCS_HOME/bin/installs/1b-acquisitions.sh $JOB_NAME
-$I2B2_INSTALL_PROCS_HOME/bin/installs/1c-install-ant.sh $JOB_NAME
-$I2B2_INSTALL_PROCS_HOME/bin/installs/1d-install-jdk.sh $JOB_NAME
-$I2B2_INSTALL_PROCS_HOME/bin/installs/2-install-jboss.sh $JOB_NAME
-$I2B2_INSTALL_PROCS_HOME/bin/installs/3-data-install.sh $JOB_NAME
-$I2B2_INSTALL_PROCS_HOME/bin/installs/4-pm-install.sh $JOB_NAME
-$I2B2_INSTALL_PROCS_HOME/bin/installs/5-ont-install.sh $JOB_NAME
-$I2B2_INSTALL_PROCS_HOME/bin/installs/6-crc-install.sh $JOB_NAME
-$I2B2_INSTALL_PROCS_HOME/bin/installs/7-work-install.sh $JOB_NAME
-$I2B2_INSTALL_PROCS_HOME/bin/installs/8-fr-install.sh $JOB_NAME
-$I2B2_INSTALL_PROCS_HOME/bin/installs/9-install-i2b2-iws.sh $JOB_NAME
-$I2B2_INSTALL_PROCS_HOME/bin/installs/A-install-i2b2-admin-procedures.sh $JOB_NAME
+$I2B2_INSTALL_PROCS_HOME/bin/installs/1-prerequisites.sh $JOB_NAME
+$I2B2_INSTALL_PROCS_HOME/bin/installs/2-acquisitions.sh $JOB_NAME
+$I2B2_INSTALL_PROCS_HOME/bin/installs/3-install-ant.sh $JOB_NAME
+$I2B2_INSTALL_PROCS_HOME/bin/installs/4-install-jdk.sh $JOB_NAME
+$I2B2_INSTALL_PROCS_HOME/bin/installs/5-install-jboss.sh $JOB_NAME
+$I2B2_INSTALL_PROCS_HOME/bin/installs/6-data-install.sh $JOB_NAME
 
+#-----------------------------------------------------------------------
+# Check JBoss is stopped.
+#
+# The topping and tailing of JBoss stop/starts prevents
+# multiple stops and restarts for each separate install into JBoss.
+#-----------------------------------------------------------------------
+export DELAY_JBOSS_STOPSTART=false
+stopjboss
+export DELAY_JBOSS_STOPSTART=true
+
+$I2B2_INSTALL_PROCS_HOME/bin/installs/7-pm-install.sh $JOB_NAME
+$I2B2_INSTALL_PROCS_HOME/bin/installs/8-webclient-install.sh $JOB_NAME
+$I2B2_INSTALL_PROCS_HOME/bin/installs/9-ont-install.sh $JOB_NAME
+$I2B2_INSTALL_PROCS_HOME/bin/installs/A-crc-install.sh $JOB_NAME
+$I2B2_INSTALL_PROCS_HOME/bin/installs/B-work-install.sh $JOB_NAME
+$I2B2_INSTALL_PROCS_HOME/bin/installs/C-fr-install.sh $JOB_NAME
+$I2B2_INSTALL_PROCS_HOME/bin/installs/D-im-install.sh $JOB_NAME
+$I2B2_INSTALL_PROCS_HOME/bin/installs/E-install-i2b2-iws.sh $JOB_NAME
+$I2B2_INSTALL_PROCS_HOME/bin/installs/F-install-i2b2-admin-procedures.sh $JOB_NAME
+
+#-----------------------------------------------------------------------
+# Check JBoss is started in the background
+#
+#-----------------------------------------------------------------------
+export DELAY_JBOSS_STOPSTART=false
+startjboss ${JOB_NAME}
+export DELAY_JBOSS_STOPSTART=true

@@ -1,0 +1,10 @@
+ i2b2hive     | crc_db_lookup                                     | table    | i2b2hive
+ i2b2hive     | im_db_lookup                                      | table    | i2b2hive
+ i2b2hive     | ont_db_lookup                                     | table    | i2b2hive
+ i2b2hive     | work_db_lookup                                    | table    | i2b2hive
+
+ 
+ i2b2hive.crc_db_lookup
+ i2b2hive.im_db_lookup
+ i2b2hive.ont_db_lookup
+ i2b2hive.work_db_lookup

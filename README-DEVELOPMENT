@@ -20,7 +20,11 @@ NOTES:
 (1) For development testing, the lib directory needs to be populated.
     Do a maven install and then unzip the artifact's lib directory.
 (2) The stopping and starting of JBoss needs looking at.
-(3) The Oracle parts have been left in place, but ARE OUT OF DATE.
-    I've left them in situ because I understand that the Oracle
-    settings may well be close to Postgres (as and when an i2b2 version
-    supporting Postgres becomes available).
+(3) Linux accounts and permissions could do with a review.
+(4) The integration user (See the install admin procedures' script)
+    needs more thought.
+(5) The SqlServer and Oracle details have been removed, 
+    for the moment and for the sake of clarity.
+    Concentration has shifted to the open source database Postgresql.
+    If we need SqlServer or Oracle, their details would need to be included:
+    not difficult to do, but may be a pain to test.    

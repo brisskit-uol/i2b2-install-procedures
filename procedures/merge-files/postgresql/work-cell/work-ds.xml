@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== -->
+<!--                                                                        -->
+<!--  JBoss Server Configuration                                            -->
+<!--                                                                        -->
+<!-- ====================================================================== -->
+<datasources xmlns="http://www.jboss.org/ironjacamar/schema">
+
+	<datasource jta="false" jndi-name="java:/WorkplaceBootStrapDS"
+		pool-name="WorkplaceBootStrapDS" enabled="true" use-ccm="false">
+		<connection-url>${db.base.url}/${hive.databasename}?searchpath=${hive.schemaname}</connection-url>
+		<driver-class>${db.driver}</driver-class>
+		<driver>${db.jdbc.jar}</driver>
+		<security>
+			<user-name>${hive.username}</user-name>
+			<password>${hive.password}</password>
+		</security>
+		<validation>
+			<validate-on-match>false</validate-on-match>
+			<background-validation>false</background-validation>
+		</validation>
+		<statement>
+			<share-prepared-statements>false</share-prepared-statements>
+		</statement>
+	</datasource>
+
+	<datasource jta="false" jndi-name="java:/WorkplaceDemoDS"
+		pool-name="WorkplaceDemoDS" enabled="true" use-ccm="false">
+		<connection-url>${db.base.url}/${workdata.databasename}?searchpath=${workdata.schemaname}</connection-url>
+		<driver-class>${db.driver}</driver-class>
+		<driver>${db.jdbc.jar}</driver>
+		<security>
+			<user-name>${workdata.username}</user-name>
+			<password>${workdata.password}</password>
+		</security>
+		<validation>
+			<validate-on-match>false</validate-on-match>
+			<background-validation>false</background-validation>
+		</validation>
+		<statement>
+			<share-prepared-statements>false</share-prepared-statements>
+		</statement>
+	</datasource>
+		
+</datasources>

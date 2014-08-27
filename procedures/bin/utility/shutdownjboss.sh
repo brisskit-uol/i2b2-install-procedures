@@ -12,10 +12,10 @@ LOG_FILE=$WORK_DIR/$JOB_LOG_NAME
 # STOP JBOSS
 #====================================
 print_message "" $LOG_FILE
-print_message "Starting JBoss in the background..." $LOG_FILE
-$JBOSS_HOME/bin/shutdown.sh -S >>$LOG_FILE 2>>$LOG_FILE &
+print_message "Attempting to stop JBoss, if it is running..." $LOG_FILE
+$JBOSS_HOME/bin/jboss-cli.sh --connect :shutdown >>$LOG_FILE 2>>$LOG_FILE
 
-sleep 20
+sleep 15
 echo ""
 echo "Services should have stopped, but please check the job log or the JBoss logs."
 

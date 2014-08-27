@@ -7,8 +7,8 @@
 # Log file name:
 export JOB_LOG_NAME=job.log
 
-# Database: either oracle or sqlserver
-export DB_TYPE=sqlserver
+# Database: either oracle, sqlserver or postgresql
+export DB_TYPE=postgresql
 
 # Name of directory to hold archives of source, 
 # demo data and others acquired from elsewhere
@@ -18,24 +18,35 @@ export ACQUISITIONS_DIRECTORY=acquisitions
 # (Will be downloaded here)
 export SOURCE_DIRECTORY=source
 
-# Name of directory to hold data for the i2b2 hive and two demo systems
+# Name of directory to hold data for the i2b2 hive and its demo system
 # (Will be downloaded here)
 export DATA_DIRECTORY=data
 
+#
+# Flag to switch off the multiple shutting down and starting up of JBOSS
+# (Default setting is 'false'. That is, multiple startups will occur).
+export DELAY_JBOSS_STOPSTART=false
+
 # We need a user and password for wget to maven repo
-export MVN_READONLY_USER=readonly
-export MVN_READONLY_PASSWORD=readonly.....
+export MVN_DEPLOY_USER=readonly
+export MVN_DEPLOY_PASSWORD=readonly.....
 
-# Acquisition paths:
-export JDK_DOWNLOAD_PATH=http://maven.brisskit.org/nexus/content/repositories/thirdparty/oracle/jdk/jdk/7u17-linux/jdk-7u17-linux-x64.tar.gz
-export ANT_DOWNLOAD_PATH=http://maven.brisskit.org/nexus/content/repositories/thirdparty/apache/ant/apache-ant/1.8.4/apache-ant-1.8.4-bin.zip
-export JBOSS_DOWNLOAD_PATH=http://maven.brisskit.org/nexus/content/repositories/thirdparty/jboss/jboss-server/jboss/4.2.3.GA-brisskit/jboss-4.2.3.GA-brisskit-development.zip
-export I2B2_SOURCE_DOWNLOAD_PATH=http://maven.brisskit.org/nexus/content/repositories/thirdparty/i2b2/i2b2core-src/155-briccs-1.0/i2b2core-src-155-briccs-1.0.zip
-export I2B2_DATA_DOWNLOAD_PATH=http://maven.brisskit.org/nexus/content/repositories/thirdparty/i2b2/i2b2demodata/15-briccs-1.0/i2b2demodata-15-briccs-1.0.zip
-export AXIS_WAR_DOWNLOAD_PATH=http://maven.brisskit.org/nexus/content/repositories/thirdparty/axis/axis2/size-11047678/axis2-size-11047678.war
-export I2B2_INTEGRATION_WS_DOWNLOAD_PATH=http://maven.brisskit.org/nexus/content/repositories/releases/org/brisskit/app/i2b2/i2b2WS/1.0-RC1/i2b2WS-1.0-RC1.war
-export I2B2_ADMIN_PROCEDURES_DOWNLOAD_PATH=http://maven.brisskit.org/nexus/content/repositories/releases/org/brisskit/app/i2b2/i2b2-admin-procedures/1.0-RC1-development/i2b2-admin-procedures-1.0-RC1-development.zip
-
+# Acquisition paths.
+# Intermediate environment variable BMN points to the Brisskit Maven instance of Nexus
+BMN=http://maven.brisskit.org/nexus/content/repositories
+export JDK_DOWNLOAD_PATH=${BMN}/thirdparty/oracle/jdk/jdk/7u17-linux/jdk-7u17-linux-x64.tar.gz
+export ANT_DOWNLOAD_PATH=${BMN}/thirdparty/apache/ant/apache-ant/1.8.4/apache-ant-1.8.4-bin.zip
+export JBOSS_DOWNLOAD_PATH=${BMN}/thirdparty/jboss/jboss-server/jboss-as/7.1.1.Final/jboss-as-7.1.1.Final.tar.gz
+export I2B2_SOURCE_DOWNLOAD_PATH=${BMN}/thirdparty/i2b2/i2b2core-src/1701-brisskit-1.0/i2b2core-src-1701-brisskit-1.0.zip
+export I2B2_DATA_DOWNLOAD_PATH=${BMN}/thirdparty/i2b2/i2b2createdb/1701-brisskit-1.0/i2b2createdb-1701-brisskit-1.0.zip
+export AXIS_WAR_DOWNLOAD_PATH=${BMN}/thirdparty/axis/axis2/1.6.2/axis2-1.6.2-war.zip
+export I2B2_INTEGRATION_WS_DOWNLOAD_PATH=${BMN}/releases/org/brisskit/app/i2b2/i2b2WS/1.0-RC1/i2b2WS-1.0-RC2.war
+## NB: admin procedures are still under development for Postgresql
+export I2B2_ADMIN_PROCEDURES_DOWNLOAD_PATH=${BMN}/snapshots/org/brisskit/app/i2b2/i2b2-1.7-admin-procedures/1.0-development-SNAPSHOT/i2b2-1.7-admin-procedures-1.0-development-20140318.160958-1.zip
+export I2B2_CIVI_EXPORT_PLUGIN_DOWNLOAD_PATH=${BMN}/releases/org/brisskit/app/i2b2/i2b2-civi-plugin/1.0-RC1/i2b2-civi-plugin-1.0-RC1.zip
+#
+# OS A/C user for integration purposes.
+# This user is created.
 export SSH_INTEGRATION_USER=integration
 
 # Directory Names for some of the installs...

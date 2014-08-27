@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== -->
+<!--                                                                        -->
+<!--  JBoss Server Configuration                                            -->
+<!--                                                                        -->
+<!-- ====================================================================== -->
+<datasources>
+	<datasource jta="false" jndi-name="java:/CRCBootStrapDS"
+         pool-name="CRCBootStrapDS" enabled="true" use-ccm="false">
+         <connection-url>${db.base.url}/${hive.databasename}?searchpath=${hive.schemaname}</connection-url>
+         <driver-class>${db.driver}</driver-class>
+         <driver>${db.jdbc.jar}</driver>
+         <security>
+             <user-name>${hive.username}</user-name>
+             <password>${hive.password}</password>
+         </security>
+         <validation>
+             <validate-on-match>false</validate-on-match>
+             <background-validation>false</background-validation>
+         </validation>
+         <statement>
+             <share-prepared-statements>false</share-prepared-statements>
+         </statement>
+	</datasource>
+
+	<datasource jta="false" jndi-name="java:/QueryToolDemoDS"
+		pool-name="QueryToolDemoDS" enabled="true" use-ccm="false">
+		<connection-url>${db.base.url}/${demods.databasename}?searchpath=${demods.schemaname}</connection-url>
+		<driver-class>${db.driver}</driver-class>
+		<driver>${db.jdbc.jar}</driver>
+		<security>
+			<user-name>${demods.username}</user-name>
+			<password>${demods.password}</password>
+		</security>
+		<validation>
+			<validate-on-match>false</validate-on-match>
+			<background-validation>false</background-validation>
+		</validation>
+		<statement>
+			<share-prepared-statements>false</share-prepared-statements>
+		</statement>
+	</datasource>
+
+</datasources>

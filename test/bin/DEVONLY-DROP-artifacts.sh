@@ -17,7 +17,6 @@
 #
 # Author: Jeff Lusted (jl99@leicester.ac.uk)
 #-----------------------------------------------------------------------------------------------
-source ../../../set.sh
 source $I2B2_INSTALL_PROCS_HOME/bin/common/functions.sh
 source $I2B2_INSTALL_PROCS_HOME/bin/common/setenv.sh
 
@@ -101,7 +100,7 @@ print_message "About to drop the demodata SQL artifacts for 'demo' project."
                   
 $ANT_HOME/bin/ant -propertyfile $I2B2_INSTALL_PROCS_HOME/config/config.properties \
                   -Dinstall.home=$I2B2_INSTALL_PROCS_HOME \
-                  -f $I2B2_INSTALL_PROCS_HOME/ant/${DB_TYPE}/DEVONLY-DROP-artifacts.xml \
+                  -f $I2B2_INSTALL_PROCS_HOME/development-only/ant/${DB_TYPE}/DEVONLY-DROP-artifacts.xml \
                   drop_demodata                 
 exit_if_bad $? "Failed to drop demodata SQL artifacts for 'demo' project." 
 print_message "Success! Dropped demodata SQL artifacts for 'demo' project."
@@ -114,7 +113,7 @@ print_message "About to drop the metadata SQL artifacts for 'demo' project."
                   
 $ANT_HOME/bin/ant -propertyfile $I2B2_INSTALL_PROCS_HOME/config/config.properties \
                   -Dinstall.home=$I2B2_INSTALL_PROCS_HOME \
-                  -f $I2B2_INSTALL_PROCS_HOME/ant/${DB_TYPE}/DEVONLY-DROP-artifacts.xml \
+                  -f $I2B2_INSTALL_PROCS_HOME/development-only/ant/${DB_TYPE}/DEVONLY-DROP-artifacts.xml \
                   drop_metadata                 
 exit_if_bad $? "Failed to drop metadata SQL artifacts for 'demo' project." 
 print_message "Success! Dropped metadata SQL artifacts for 'demo' project." 
@@ -127,7 +126,7 @@ print_message "About to drop the workdata SQL artifacts for 'demo' project."
                   
 $ANT_HOME/bin/ant -propertyfile $I2B2_INSTALL_PROCS_HOME/config/config.properties \
                   -Dinstall.home=$I2B2_INSTALL_PROCS_HOME \
-                  -f $I2B2_INSTALL_PROCS_HOME/ant/${DB_TYPE}/DEVONLY-DROP-artifacts.xml \
+                  -f $I2B2_INSTALL_PROCS_HOME/development-only/ant/${DB_TYPE}/DEVONLY-DROP-artifacts.xml \
                   drop_workdata                 
 exit_if_bad $? "Failed to drop workdata SQL artifacts for 'demo' project." 
 print_message "Success! Dropped workdata SQL artifacts for 'demo' project." 
@@ -140,7 +139,7 @@ print_message "About to drop the hive SQL artifacts."
                   
 $ANT_HOME/bin/ant -propertyfile $I2B2_INSTALL_PROCS_HOME/config/config.properties \
                   -Dinstall.home=$I2B2_INSTALL_PROCS_HOME \
-                  -f $I2B2_INSTALL_PROCS_HOME/ant/${DB_TYPE}/DEVONLY-DROP-artifacts.xml \
+                  -f $I2B2_INSTALL_PROCS_HOME/development-only/ant/${DB_TYPE}/DEVONLY-DROP-artifacts.xml \
                   drop_i2b2hive                 
 exit_if_bad $? "Failed to drop hive SQL artifacts." 
 print_message "Success! Dropped hive SQL artifacts."
@@ -153,10 +152,23 @@ print_message "About to drop the PM SQL artifacts."
                   
 $ANT_HOME/bin/ant -propertyfile $I2B2_INSTALL_PROCS_HOME/config/config.properties \
                   -Dinstall.home=$I2B2_INSTALL_PROCS_HOME \
-                  -f $I2B2_INSTALL_PROCS_HOME/ant/${DB_TYPE}/DEVONLY-DROP-artifacts.xml \
+                  -f $I2B2_INSTALL_PROCS_HOME/development-only/ant/${DB_TYPE}/DEVONLY-DROP-artifacts.xml \
                   drop_i2b2pm                 
 exit_if_bad $? "Failed to drop PM SQL artifacts." 
 print_message "Success! Dropped PM SQL artifacts." 
+
+#================================================
+# Drop the im SQL artifacts 
+#================================================
+print_message ""
+print_message "About to drop the IM SQL artifacts." 
+                  
+$ANT_HOME/bin/ant -propertyfile $I2B2_INSTALL_PROCS_HOME/config/config.properties \
+                  -Dinstall.home=$I2B2_INSTALL_PROCS_HOME \
+                  -f $I2B2_INSTALL_PROCS_HOME/development-only/ant/${DB_TYPE}/DEVONLY-DROP-artifacts.xml \
+                  drop_i2b2im                 
+exit_if_bad $? "Failed to drop IM SQL artifacts." 
+print_message "Success! Dropped IM SQL artifacts."
 #=========================================================================
 # If we got this far, we must be successful (hopefully) ...
 #=========================================================================

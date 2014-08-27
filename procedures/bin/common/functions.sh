@@ -3,7 +3,7 @@
 # Common Functions
 #
 # Invocation within another shell script should be
-# source ${I2B2_INSTALL_PROCS_HOME}functions.sh
+# source ${I2B2_INSTALL_PROCS_HOME}/bin/common/functions.sh
 #
 #----------------------------------------------------------------------------------------
 
@@ -199,5 +199,40 @@ infolog() {
         echo "INFO  : ${1}"
     fi
     }
+    
+#------------------------------------------------------------------------------
+# Verify JBOSS is not running.
+#------------------------------------------------------------------------------
+stopjboss() {
+	if [ ${DELAY_JBOSS_STOPSTART} = false ]
+	then
+		echo ""
+		echo "Attempting to stop JBoss, if it is running."
+		$JBOSS_HOME/bin/jboss-cli.sh --connect :shutdown >/dev/null 2>/dev/null 
+		sleep 60
+		echo ""	
+	fi
+	}
 
+#------------------------------------------------------------------------------
+# Attempt to start JBOSS in the background.
+# ${1} : Log file
+# ${2} : Optional extra message to be output.
+#------------------------------------------------------------------------------
+startjboss() {
+	if [ ${DELAY_JBOSS_STOPSTART} = false ]
+	then
+		echo ""
+		echo "Attempting to start JBoss in the background."
+		$JBOSS_HOME/bin/standalone.sh -b 0.0.0.0 >>${1} 2>>${1} &
+		sleep 60
+		echo ""
+		echo "Services should have started, but please check the install log or the JBoss logs."
+		if [ $2 ]
+		then
+			echo "${2}"
+			echo ""
+		fi
 
+	fi
+	}

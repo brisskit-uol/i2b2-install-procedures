@@ -12,7 +12,7 @@
 # (3) Edit setting for ADMIN_PACKAGE_NAME in order to pick up the correct version of the admin procedures.
 #-----------------------------------------------------------------------------------------------------------
 export I2B2_INSTALL_DIRECTORY=/var/local/brisskit/i2b2
-INSTALL_PACKAGE_NAME=i2b2-1.5.5-install-procedures-1.0-RC1-development
-ADMIN_PACKAGE_NAME=i2b2-admin-procedures-1.0-RC1-development
+INSTALL_PACKAGE_NAME=i2b2-1.7-install-procedures-1.0-RC1-development
+ADMIN_PACKAGE_NAME=i2b2-1.7-admin-procedures-1.0-RC1-development
 export I2B2_INSTALL_PROCS_HOME=$I2B2_INSTALL_DIRECTORY/${INSTALL_PACKAGE_NAME}
 export I2B2_ADMIN_PROCS_HOME=${I2B2_INSTALL_DIRECTORY}/${ADMIN_PACKAGE_NAME}
