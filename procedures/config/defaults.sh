@@ -29,7 +29,7 @@ export DELAY_JBOSS_STOPSTART=false
 
 # We need a user and password for wget to maven repo
 export MVN_DEPLOY_USER=readonly
-export MVN_DEPLOY_PASSWORD=readonly.....
+export MVN_DEPLOY_PASSWORD=********
 
 # Acquisition paths.
 # Intermediate environment variable BMN points to the Brisskit Maven instance of Nexus
