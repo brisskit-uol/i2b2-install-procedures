@@ -29,11 +29,11 @@ export DELAY_JBOSS_STOPSTART=false
 
 # We need a user and password for wget to maven repo
 export MVN_DEPLOY_USER=readonly
-export MVN_DEPLOY_PASSWORD=********
+export MVN_DEPLOY_PASSWORD=readonly...
 
 # Acquisition paths.
 # Intermediate environment variable BMN points to the Brisskit Maven instance of Nexus
-BMN=http://maven.brisskit.le.ac.uk/nexus/content/repositories
+BMN=https://maven.brisskit.le.ac.uk:443/nexus/content/repositories
 export JDK_DOWNLOAD_PATH=${BMN}/thirdparty/oracle/jdk/jdk/7u17-linux/jdk-7u17-linux-x64.tar.gz
 export ANT_DOWNLOAD_PATH=${BMN}/thirdparty/apache/ant/apache-ant/1.8.4/apache-ant-1.8.4-bin.zip
 export JBOSS_DOWNLOAD_PATH=${BMN}/thirdparty/jboss/jboss-server/jboss-as/7.1.1.Final/jboss-as-7.1.1.Final.tar.gz
